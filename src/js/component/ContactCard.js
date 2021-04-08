@@ -7,13 +7,13 @@ import { Context } from "../store/appContext";
 export const ContactCard = props => {
 	const [state, setState] = useState([]);
 	const { store, actions } = useContext(Context);
-	useEffect(() => {
-		fetch("https://assets.breatheco.de/apis/fake/contact/")
-			.then(resp => resp.json())
-			.then(datos => {
-				setState(...state, datos);
-			});
-	}, []);
+	// useEffect(() => {
+	// 	fetch("https://assets.breatheco.de/apis/fake/contact/")
+	// 		.then(resp => resp.json())
+	// 		.then(datos => {
+	// 			setState(...state, datos);
+	// 		});
+	// }, []);
 
 	return (
 		<li className="list-group-item">
@@ -23,7 +23,7 @@ export const ContactCard = props => {
 				</div>
 				<div className="col-12 col-sm-6 col-md-9 text-center text-sm-left">
 					<div className=" float-right">
-						<Link to={`/edit/${props.contact.id}`}>
+						<Link to={`/edit/${props.id}`}>
 							<button type="submit">
 								<i className="fas fa-pencil-alt mr-3" />
 							</button>
@@ -70,7 +70,8 @@ export const ContactCard = props => {
 ContactCard.propTypes = {
 	history: PropTypes.object,
 	onDelete: PropTypes.func,
-	contact: PropTypes.object
+	contact: PropTypes.object,
+	id: PropTypes.object
 };
 
 /**

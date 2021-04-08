@@ -57,12 +57,14 @@ export const AddContact = props => {
 						/>
 					</div>
 					<button
+						to="/"
 						type="submit"
 						className="btn btn-primary form-control mb-3"
 						onClick={e => actions.handleClickSubmit(e)}>
 						save
 					</button>
 					<button
+						to="/"
 						type="submit"
 						className="btn btn-primary form-control mb-3"
 						onClick={e => actions.handleClickUpdate(e, params.id)}>
